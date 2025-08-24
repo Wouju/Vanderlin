@@ -724,9 +724,38 @@
         ]
     },
     "2025-08-24": {
+        "CheffieGithub": [
+            {
+                "bugfix": "fix abyssorites and acolytes miracles"
+            }
+        ],
         "Diegoflores31": [
             {
                 "bugfix": "fixes goldface"
+            }
+        ],
+        "Wouju": [
+            {
+                "bugfix": "raw essentia crafting"
+            }
+        ],
+        "Arkatos": [
+            {
+                "rscadd": "Added a new triumph buy - Secret Officiant."
+            },
+            {
+                "rscadd": "Added a new triumph buy - Random Curse."
+            }
+        ],
+        "PotatoTomahto": [
+            {
+                "rscadd": "briar troll shrine that can be made with two troll heads"
+            },
+            {
+                "code_imp": "transformation status effect, refactors transformation code"
+            },
+            {
+                "balance": "werewolves have slightly higher bleed mod. werewolves damage clothing upon transformation."
             }
         ]
     }
