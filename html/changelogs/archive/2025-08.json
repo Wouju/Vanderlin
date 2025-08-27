@@ -896,5 +896,15 @@
                 "balance": "closed turfs can burn"
             }
         ]
+    },
+    "2025-08-27": {
+        "Arkatos": [
+            {
+                "rscadd": "Expanded Economy section in the Chronicle."
+            },
+            {
+                "rscadd": "Added Gods Events in the Chronicle."
+            }
+        ]
     }
 }
