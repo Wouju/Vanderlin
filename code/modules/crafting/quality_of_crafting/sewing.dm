@@ -413,7 +413,7 @@
 	craftdiff = 2
 	category = "Cloak"
 
-/datum/repeatable_crafting_recipe/sewing/tabard
+/datum/repeatable_crafting_recipe/sewing/tabard/crusader
 	name = "tabard (crusader)"
 	output = /obj/item/clothing/cloak/tabard/crusader
 	requirements = list(/obj/item/natural/cloth = 3,
@@ -602,6 +602,14 @@
 /datum/repeatable_crafting_recipe/sewing/cape
 	name = "cape"
 	output = /obj/item/clothing/cloak/cape
+	requirements = list(/obj/item/natural/cloth = 2,
+				/obj/item/natural/fibers = 1)
+	craftdiff = 3
+	category = "Cloak"
+
+/datum/repeatable_crafting_recipe/sewing/cape/shredded
+	name = "shredded cloak"
+	output = /obj/item/clothing/cloak/shredded
 	requirements = list(/obj/item/natural/cloth = 2,
 				/obj/item/natural/fibers = 1)
 	craftdiff = 3
