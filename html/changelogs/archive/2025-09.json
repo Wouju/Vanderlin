@@ -664,7 +664,16 @@
                 "balance": "adepts no longer have church key"
             },
             {
+                "rscadd": "Abyssorites and Pestrans can summon leeches now."
+            },
+            {
+                "balance": "tweaked cost and cooldown of cure rot and bodypart miracle. Bodypart miracle now heals limbs and organs when reattached."
+            },
+            {
                 "balance": "Fireball, arcyne storm and meteor storm have shout invocations now."
+            },
+            {
+                "rscadd": "Added new mercenary. Sellmage. Basically a mage noble whom became a mercenary to make ends meet."
             }
         ],
         "wgtjunior743": [
