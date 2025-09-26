@@ -809,5 +809,12 @@
                 "rscadd": "Eora's miracle, Instill Perfection, will also increase hygiene now."
             }
         ]
+    },
+    "2025-09-26": {
+        "wgtjunior743": [
+            {
+                "bugfix": "Abyssal and Sword Dancer mercs spawning without their keys."
+            }
+        ]
     }
 }
