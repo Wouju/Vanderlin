@@ -882,6 +882,17 @@
             },
             {
                 "bugfix": "Steamknight still being expert on crossbow."
+            },
+            {
+                "bugfix": "Tieflings, Hollow-kin and medicators being able to play noble as prisoner."
+            },
+            {
+                "bugfix": "Magician Apprentices are properly locked to Noc and Zizo."
+            }
+        ],
+        "Vithelic": [
+            {
+                "admin": "Added a new smite."
             }
         ],
         "Wouju": [
@@ -902,6 +913,13 @@
             },
             {
                 "balance": "you can aim for a specific back/belt slot by aiming for the targets arms/legs"
+            }
+        ]
+    },
+    "2025-09-29": {
+        "wgtjunior743": [
+            {
+                "bugfix": "Sallet beings unforgeable."
             }
         ]
     }
