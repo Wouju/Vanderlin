@@ -20,9 +20,22 @@
         ]
     },
     "2025-10-02": {
+        "wgtjunior743": [
+            {
+                "admin": "New Admin verb at the VV dropdown to coronate someone."
+            },
+            {
+                "rscadd": "Migrant Waves got their description at the menu."
+            }
+        ],
         "CheffieGithub": [
             {
                 "bugfix": "Fixed locks being able to unlock things :D"
+            }
+        ],
+        "flleeppyy": [
+            {
+                "server": "Changes made to main config, `SERVERNAME`, `SERVERSUBTITLE` and `HOSTEDBY` namely."
             }
         ],
         "grungussuss": [
@@ -37,6 +50,11 @@
             },
             {
                 "rscadd": "The broodmother"
+            }
+        ],
+        "snowyseshi": [
+            {
+                "rscadd": "Added a pouch with mammons to the VL"
             }
         ]
     }
