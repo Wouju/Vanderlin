@@ -296,6 +296,18 @@
 		obj_flags = CAN_BE_HIT | BLOCK_Z_OUT_DOWN | BLOCK_Z_IN_UP
 
 
+/obj/structure/plank
+	name = "plank"
+	desc = ""
+	icon = 'icons/turf/floors.dmi'
+	icon_state = "plank2"
+	density = FALSE
+	layer = TABLE_LAYER
+	plane = GAME_PLANE
+	damage_deflection = 5
+	blade_dulling = DULLING_BASHCHOP
+	obj_flags = CAN_BE_HIT | BLOCK_Z_OUT_DOWN | BLOCK_Z_IN_UP
+
 /obj/structure/bars/pipe
 	name = "bronze pipe"
 	desc = ""
@@ -959,11 +971,11 @@
 		var/datum/antagonist/bandit/B = user.mind.has_antag_datum(/datum/antagonist/bandit)
 		if(B)
 			if(B.tri_amt >= 8)
-				to_chat(user, "<span class='warning'>The idol had collected enough tribute from you.</span>")
+				to_chat(user, span_warning("The idol had collected enough tribute from you."))
 				return
 			if(istype(W, /obj/item/reagent_containers/lux))
-				B.contrib += 150
-				record_round_statistic(STATS_SHRINE_VALUE, 150)
+				B.contrib += 120
+				record_round_statistic(STATS_SHRINE_VALUE, 120)
 			else if(istype(W, /obj/item/coin) || istype(W, /obj/item/gem) || istype(W, /obj/item/reagent_containers/glass/cup/silver) || istype(W, /obj/item/reagent_containers/glass/cup/golden) || istype(W, /obj/item/reagent_containers/glass/carafe) || istype(W, /obj/item/clothing/ring) || istype(W, /obj/item/clothing/head/crown/circlet) || istype(W, /obj/item/statue))
 				if(!istype(W, /obj/item/coin))
 					B.contrib += (W.get_real_price() / 2) // sell jewelry and other fineries, though at a lesser price compared to fencing them first
@@ -971,7 +983,10 @@
 				else
 					B.contrib += W.get_real_price()
 					record_round_statistic(STATS_SHRINE_VALUE, W.get_real_price())
-			if(B.contrib >= 100)
+			else
+				to_chat(user, span_warning("The idol doesn't want your garbage."))
+				return
+			if(B.contrib >= 80)
 				give_rewards(B, user)
 			else
 				playsound(loc,'sound/items/matidol1.ogg', 50, TRUE)
@@ -984,7 +999,7 @@
 /obj/structure/fluff/statue/evil/proc/give_rewards(datum/antagonist/bandit/offering_bandit, mob/user)
 	offering_bandit.tri_amt++
 	user.mind.adjust_triumphs(1)
-	offering_bandit.contrib -= 100
+	offering_bandit.contrib -= 80
 
 	var/obj/item/I
 	switch(offering_bandit.tri_amt)
@@ -1112,6 +1127,25 @@
 	name = "lording shrine to Dendor"
 	desc = "The life force of a Troll has consecrated this holy place. \n First present two troll horns to craft a purple sacrifice. \n Then offer a piece of strange meat and two sinews to craft an indigo sacrifice."
 	icon_state = "shrine_dendor_troll"
+
+/obj/structure/fluff/psycross/psycrucifix
+	name = "wooden psydonic crucifix"
+	desc = "A rarely seen symbol of absolute and devoted certainty, more common in Grenzelhoft: HE yet lyves. HE yet breathes."
+	icon_state = "psycruci"
+	max_integrity = 80
+
+/obj/structure/fluff/psycross/psycrucifix/stone
+	name = "stone psydonic crucifix"
+	desc = "Formed of stone, this great Psycross symbolises that HE is forever ENDURING. Considered a rare sight upon the Peaks."
+	icon_state = "psycruci_r"
+	max_integrity = 120
+
+/obj/structure/fluff/psycross/psycrucifix/silver
+	name = "silver psydonic crucifix"
+	icon_state = "psycruci_s"
+	desc = "Constructed of Blessed Silver, this crucifix symbolises absolute faith in the ONE - For PSYDON WEEPS, for all mortal ilk. PSYDON WEEPS, for all who walk upon the soil. PSYDON WEEPS..."
+	attacked_sound = list("sound/combat/hits/onmetal/metalimpact (1).ogg", "sound/combat/hits/onmetal/metalimpact (2).ogg")
+	max_integrity = 450
 
 /obj/structure/fluff/psycross/attackby(obj/item/W, mob/living/carbon/human/user, params)
 	if(!user.mind)

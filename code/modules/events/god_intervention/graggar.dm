@@ -9,7 +9,12 @@ GLOBAL_LIST_EMPTY(graggar_cullings)
 	earliest_start = 20 MINUTES
 	max_occurrences = 1
 	min_players = 35
-	allowed_storytellers = list(/datum/storyteller/graggar)
+	dedicated_storytellers = list(/datum/storyteller/graggar)
+	allowed_storytellers = INHUMEN_STORYTELLERS
+
+	tags = list(
+		TAG_GRAGGAR,
+	)
 
 /datum/round_event_control/graggar_culling/canSpawnEvent(players_amt, gamemode, fake_check)
 	. = ..()
@@ -119,7 +124,7 @@ GLOBAL_LIST_EMPTY(graggar_cullings)
 	if(winner)
 		winner.add_stress(/datum/stress_event/graggar_culling_finished)
 		winner.adjust_triumphs(1)
-		adjust_storyteller_influence(GRAGGAR, 10)
+		adjust_storyteller_influence(GRAGGAR, 20)
 		to_chat(winner, span_notice("Your rival's heart has been DESTROYED! While not the glorious consumption Graggar has desired, you have overcome the culling nevertheless."))
 
 	finish_culling(winner, loser)
